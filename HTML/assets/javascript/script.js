@@ -1,8 +1,10 @@
 var nome = window.document.getElementById("nome")
 var email = document.querySelector("#email")
+var assunto = document.querySelector("#assunto")
 var nomeOk = false
 var emailOk = false
-
+var assuntoOk = false
+var mapa = document.querySelector("#mapa")
 
 function validarNome(){
     let TxtNome = document.querySelector("#TxtNome")
@@ -11,7 +13,7 @@ function validarNome(){
         TxtNome.style.color = "red"
         nomeOk = false
 
-    }else{
+    }else{ 
         TxtNome.innerHTML = "Nome válido!"
         TxtNome.style.color = "green"
         nomeOk = true
@@ -40,3 +42,27 @@ function Enviar(){
         alert("preencha o campo corretamente!")
     }
 }
+
+function validarAssunto(){
+    let TxtAssunto = document.querySelector("#TxtAssunto")
+
+    if(assunto.value.length >= 100){
+        TxtAssunto.innerHTML = "O texto é muito grande, digite no máximo 100 caracteres"
+        TxtAssunto.style.color = "red"
+        TxtAssunto.style.display = "block"
+    }else{
+        TxtAssunto.style.display = "none"
+        assuntoOk = true
+    }
+    }
+
+    function mapaZoom(){
+        mapa.style.width = "800px"
+        mapa.style.height = "600px"
+    }
+
+    function mapaNormal(){
+        mapa.style.width = "400px"
+        mapa.style.height = "250px"
+    }
+
